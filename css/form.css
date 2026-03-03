@@ -1,0 +1,28 @@
+div.form { margin:0 auto; width:620px; text-align:left; }
+
+fieldset legend { font-size:15px; font-weight: bold;font-family: Century Gothic, Arial; color:#999;}
+
+fieldset p {	margin:15px 0; padding:0 0 0 41px;  clear:left;}
+fieldset p label { width:95px;	float:left; display: inline; text-align:right; font-family: Century Gothic, Arial; text-shadow: 0px 0px 0px #FFF; color:#888;  line-height:31px; font-weight: bold;}
+
+fieldset { padding: 41px 26px 19px 26px; border:2px solid #CCC; border-radius:13px; -webkit-border-radius:13px; -moz-border-radius:13px;}
+
+button { margin:0 14px 0 0; padding:0;width:91px;height:30px;border-width:1px; border-style:solid;border-radius:3px; -webkit-border-radius:3px; -moz-border-radius:3px; border-color:#666;	background: url(../images/button.png) top repeat-x;}
+button p { margin:0; padding:6px;	font-size:15px; font-family: Century Gothic, Arial; color:#555;	line-height:1em;}
+button:hover {	border-color:#3C7FB1;	background: url(../images/button-hover.png) top repeat-x;}
+
+
+input[type="reset"],
+input[type="submit"] { border-radius:5px; -webkit-border-radius:5px; -moz-border-radius:5px;
+border-width:1px; border-style:solid;border-color:#707070; background:url(../images/button.png) center repeat-x;}
+
+input[type="reset"]:hover,
+input[type="submit"]:hover { border-color:#3C7FB1; }
+
+/* Text box */
+input[type="text"],  textarea[type="textarea"] { border-radius:5px; -webkit-border-radius:5px; -moz-border-radius:5px;
+	background : #e2f1ff; border-width:1px; border-style:solid; height:31px; border-color:#CCC; }
+
+input[type="text"]:hover, textarea[type="textarea"]:hover,
+input[type="text"]:focus , textarea[type="textarea"]:focus{ border-color:#69F; background : #e2f1ff; }
+	
