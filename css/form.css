@@ -1,17 +1,17 @@
-/* --- 基礎版面設定 --- */
+/* --- 1. 基礎版面骨架 (還原自官網) --- */
 div.form { 
     margin: 0 auto; 
     width: 620px; 
     text-align: left; 
 }
 
-/* 找回外圍框框 */
 fieldset { 
     padding: 41px 26px 19px 26px; 
     border: 2px solid #CCC; 
     border-radius: 13px; 
     -webkit-border-radius: 13px; 
     -moz-border-radius: 13px; 
+    display: block;
 }
 
 fieldset legend { 
@@ -25,9 +25,11 @@ fieldset p {
     margin: 15px 0; 
     padding: 0 0 0 41px; 
     clear: left; 
+    display: block;
+    overflow: hidden; /* 確保浮動元素不會撐破 P 標籤 */
 }
 
-/* --- Label 設定：修正冒號間距 --- */
+/* --- 2. Label 設定：已修正冒號太近的問題 --- */
 fieldset p label { 
     width: 105px; 
     float: left; 
@@ -37,10 +39,42 @@ fieldset p label {
     color: #888;  
     line-height: 31px; 
     font-weight: bold;
-    padding-right: 12px; /* 這裡拉開了 Name 跟 : 的距離 */
+    padding-right: 12px; /* 這裡拉開了文字與冒號的距離 */
 }
 
-/* --- 按鈕樣式 (還原官網圖片按鈕) --- */
+/* --- 3. 輸入框樣式：統一顏色、邊框與對齊 --- */
+input[type="text"], 
+input[type="email"], 
+textarea { 
+    border-radius: 5px; 
+    -webkit-border-radius: 5px; 
+    -moz-border-radius: 5px;
+    background: #e2f1ff !important; /* 強制執行官網淡藍色 */
+    border: 1px solid #CCC !important; 
+    font-family: Arial, sans-serif; 
+    padding: 0 5px;
+    float: left; /* 讓輸入框緊跟在 Label 後面 */
+    box-sizing: border-box; /* 確保寬度包含邊框與內距，不會變太大 */
+}
+
+/* 固定單行輸入框的高度與寬度 */
+input[type="text"], 
+input[type="email"] {
+    width: 310px;
+    height: 31px; 
+}
+
+/* 修正 Contents (textarea) 的大小與位置 */
+textarea {
+    width: 310px !important;    /* 寬度與上方對齊 */
+    height: 134px !important;   /* 還原官網高度 */
+    line-height: 1.5em;
+    padding: 5px;
+    resize: none;               /* 禁止手動拉伸，維持排版 */
+    margin-top: 2px;            /* 微調垂直位置，與 Label 對齊 */
+}
+
+/* --- 4. 按鈕樣式 (還原官網設計) --- */
 button { 
     margin: 0 14px 0 0; 
     padding: 0; 
@@ -68,40 +102,12 @@ button:hover {
     background: url(../images/button-hover.png) top repeat-x; 
 }
 
-/* --- 輸入框樣式：還原淡藍色背景並支援 Email/Contents --- */
-input[type="text"], 
-input[type="email"], 
-textarea { 
-    border-radius: 5px; 
-    -webkit-border-radius: 5px; 
-    -moz-border-radius: 5px;
-    background: #e2f1ff; /* 官網標準淡藍色 */
-    border: 1px solid #CCC; 
-    font-family: Arial, sans-serif; 
-    padding: 0 5px;
-    box-sizing: border-box;
-}
-
-input[type="text"], 
-input[type="email"] {
-    height: 31px; 
-}
-
-/* 特別針對 Contents 修正樣式 */
-textarea {
-    height: 134px !important; 
-    width: 310px !important;
-    line-height: 1.5em;
-    padding: 5px;
-    vertical-align: top;
-}
-
-/* 移除錯誤的舊設定 */
-input[type="textarea"] { display: none; } 
-
-/* 游標效果 */
-input[type="text"]:hover, input[type="email"]:hover, textarea:hover,
-input[type="text"]:focus, input[type="email"]:focus, textarea:focus { 
-    border-color: #69F; 
-    background: #e2f1ff; 
+/* 滑鼠懸停效果 */
+input[type="text"]:hover, 
+input[type="email"]:hover, 
+textarea:hover,
+input[type="text"]:focus, 
+input[type="email"]:focus, 
+textarea:focus { 
+    border-color: #69F !important; 
 }
