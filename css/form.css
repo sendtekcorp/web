@@ -1,17 +1,17 @@
-/* --- 基礎版面設定 (從舊版找回) --- */
+/* --- 基礎版面設定 --- */
 div.form { 
     margin: 0 auto; 
     width: 620px; 
     text-align: left; 
 }
 
+/* 找回外圍框框 */
 fieldset { 
     padding: 41px 26px 19px 26px; 
     border: 2px solid #CCC; 
     border-radius: 13px; 
     -webkit-border-radius: 13px; 
     -moz-border-radius: 13px; 
-    display: block; /* 確保框框顯示 */
 }
 
 fieldset legend { 
@@ -27,9 +27,9 @@ fieldset p {
     clear: left; 
 }
 
-/* --- Label 設定：已修正冒號間距 --- */
+/* --- Label 設定：修正冒號間距 --- */
 fieldset p label { 
-    width: 105px; /* 稍微增加寬度 */
+    width: 105px; 
     float: left; 
     display: inline; 
     text-align: right; 
@@ -37,10 +37,10 @@ fieldset p label {
     color: #888;  
     line-height: 31px; 
     font-weight: bold;
-    padding-right: 12px; /* 增加 Name 跟 : 之間的距離 */
+    padding-right: 12px; /* 這裡拉開了 Name 跟 : 的距離 */
 }
 
-/* --- 按鈕樣式 (從舊版找回) --- */
+/* --- 按鈕樣式 (還原官網圖片按鈕) --- */
 button { 
     margin: 0 14px 0 0; 
     padding: 0; 
@@ -68,42 +68,40 @@ button:hover {
     background: url(../images/button-hover.png) top repeat-x; 
 }
 
-/* --- 輸入框樣式：已修正 Email 與 Contents 顏色 --- */
+/* --- 輸入框樣式：還原淡藍色背景並支援 Email/Contents --- */
 input[type="text"], 
 input[type="email"], 
 textarea { 
     border-radius: 5px; 
     -webkit-border-radius: 5px; 
     -moz-border-radius: 5px;
-    background: #e2f1ff !important; /* 確保淡藍色生效 */
+    background: #e2f1ff; /* 官網標準淡藍色 */
     border: 1px solid #CCC; 
     font-family: Arial, sans-serif; 
-    padding: 5px;
-    box-sizing: border-box; /* 防止寬度爆出去 */
+    padding: 0 5px;
+    box-sizing: border-box;
 }
 
-/* 針對單行輸入框固定高度 */
 input[type="text"], 
 input[type="email"] {
     height: 31px; 
 }
 
-/* 針對 Contents (textarea) 特別設定 */
+/* 特別針對 Contents 修正樣式 */
 textarea {
-    height: 134px; /* 恢復你原本要求的高度 */
-    width: 310px;
+    height: 134px !important; 
+    width: 310px !important;
     line-height: 1.5em;
+    padding: 5px;
     vertical-align: top;
 }
 
-/* 滑鼠懸停與選取狀態 */
-input[type="text"]:hover, 
-input[type="email"]:hover, 
-textarea:hover,
-input[type="text"]:focus, 
-input[type="email"]:focus, 
-textarea:focus { 
+/* 移除錯誤的舊設定 */
+input[type="textarea"] { display: none; } 
+
+/* 游標效果 */
+input[type="text"]:hover, input[type="email"]:hover, textarea:hover,
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus { 
     border-color: #69F; 
     background: #e2f1ff; 
-    outline: none; 
 }
