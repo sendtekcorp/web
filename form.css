@@ -1,0 +1,54 @@
+/* --- 修改 label 部份，解決冒號太近的問題 --- */
+fieldset p label { 
+    width: 105px; /* 稍微增加寬度 */
+    float: left; 
+    display: inline; 
+    text-align: right; 
+    font-family: Century Gothic, Arial; 
+    color: #888;  
+    line-height: 31px; 
+    font-weight: bold;
+    padding-right: 12px; /* 這裡增加 padding，讓 "Name" 跟 ":" 之間有美感的距離 */
+}
+
+/* --- 修改 Text box 部份，統一顏色 --- */
+
+/* 這裡加入了 input[type="email"] 以及修正了 textarea 的選取方式 */
+input[type="text"], 
+input[type="email"], 
+textarea { 
+    border-radius: 5px; 
+    -webkit-border-radius: 5px; 
+    -moz-border-radius: 5px;
+    background: #e2f1ff; /* 統一淡藍色背景 */
+    border-width: 1px; 
+    border-style: solid; 
+    border-color: #CCC; 
+    font-family: Arial, sans-serif; /* 確保輸入文字字體一致 */
+    padding: 0 5px;
+}
+
+/* 針對單行輸入框固定高度 */
+input[type="text"], 
+input[type="email"] {
+    height: 31px; 
+}
+
+/* 針對多行輸入框 (Contents) 移除高度限制，讓它能正常顯示 */
+textarea {
+    height: auto; 
+    line-height: 1.5em;
+    padding: 5px;
+}
+
+/* --- 滑鼠懸停與選取狀態 --- */
+input[type="text"]:hover, 
+input[type="email"]:hover, 
+textarea:hover,
+input[type="text"]:focus, 
+input[type="email"]:focus, 
+textarea:focus { 
+    border-color: #69F; 
+    background: #e2f1ff; 
+    outline: none; /* 移除瀏覽器預設橘框 */
+}
